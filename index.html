@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>我的博客</title>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      html {
+        height: 100%;
+      }
+      body {
+        min-height: 100%;
+        display: flex;
+        flex-direction: row;
+      }
+      a {
+        text-decoration: none;
+      }
+      .main {
+        width: 100%;
+        order: 1;
+        padding: 0 30px;
+        display: flex;
+        flex-direction: column;
+      }
+      section {
+        flex-grow: 1;
+      }
+      section h2 {
+        font-size: 2rem;
+        font-weight: normal;
+      }
+      section p {
+        line-height: 180%;
+      }
+      article {
+        position: relative;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #ccc;
+      }
+      article a {
+        color: #333;
+      }
+      .pubtime {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+      footer {
+        text-align: center;
+        line-height: 60px;
+        border-top: solid 1px #ccc;
+      }
+      .sidebar {
+        flex-shrink: 0;
+        width: 230px;
+        background-color: #222;
+        color: #999;
+      }
+      .sidebar a {
+        color: #999;
+      }
+      .profile {
+        padding-top: 40px;
+        text-align: center;
+      }
+      .profile h1 {
+        font-size: 1.5rem;
+        font-weight: normal;
+      }
+      .avatar img {
+        width: 150px;
+      }
+      .navigator {
+        padding-left: 40px;
+        line-height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <section>
+        <article>
+          <h2><a href="articles/01.html">文章标题1</a></h2>
+          <p>正文正文正文正文正文正文正文正文正文正文正文正文</p>
+          <div class="pubtime"><em>发布时间 2023.3.1</em></div>
+          <div class="readmore">
+            <a href="articles/01.html">阅读全文</a>
+          </div>
+        </article>
+        <article>
+          <h2><a href="articles/01.html">文章标题1</a></h2>
+          <p>正文正文正文正文正文正文正文正文正文正文正文正文</p>
+          <div class="pubtime"><em>发布时间 2023.3.1</em></div>
+          <div class="readmore">
+            <a href="articles/01.html">阅读全文</a>
+          </div>
+        </article>
+        <article>
+          <h2><a href="articles/01.html">文章标题1</a></h2>
+          <p>正文正文正文正文正文正文正文正文正文正文正文正文</p>
+          <div class="pubtime"><em>发布时间 2023.3.1</em></div>
+          <div class="readmore">
+            <a href="articles/01.html">阅读全文</a>
+          </div>
+        </article>
+      </section>
+      <footer>&copy; 2023 - 我的博客</footer>
+    </div>
+
+    <div class="sidebar">
+      <div class="profile">
+        <div class="avatar">
+          <a href="about.html"
+            ><img src="static/image/myavatar.jpg" alt=""
+          /></a>
+        </div>
+        <h1>我的博客</h1>
+      </div>
+      <div class="navigator">
+        <div><a href="">首页</a></div>
+        <div><a href="">友链</a></div>
+      </div>
+    </div>
+    <script>
+      const pubtimeEls = document.querySelectorAll(".pubtime em");
+      pubtimeEls.foreach((el) => {
+        const data = new Data(el.innerHTML);
+        el.innerHTML = `${
+          date.getMonth() + 1
+        }月${date.getDate()}日, ${date.getFullYear()}`;
+      });
+      let title = document.title;
+      window.addEventListener("blur", () => {
+        document.title = "记得回来看我啊~";
+      });
+      window.addEventListener("focus", () => {
+        document.title = title;
+      });
+    </script>
+  </body>
+</html>
